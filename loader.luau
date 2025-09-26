@@ -1,8 +1,5 @@
---!nocheck
---!nolint
-
 _P = {
-    genDate = "2025-09-26T15:42:03.781237500+00:00",
+    genDate = "2025-09-26T15:53:55.254802900+00:00",
     cfg = "Release",
     vers = "v0.0.0"
 }
@@ -159,31 +156,34 @@ InOut,0,true),{Position=UDim2.new(0,20,0,140)})l:Play()l.Completed:Connect(
 function()c:Create(h.inputContainer,TweenInfo.new(0.1,Enum.EasingStyle.Quart,
 Enum.EasingDirection.Out),{Position=UDim2.new(0,25,0,140)}):Play()end)return end
 f.setState'validating'pcall(g.KEY_SUBMIT_CALLBACK,k)end function _handleGetKey()
-pcall(g.GET_KEY_CALLBACK)end function _handleClose()h.screenGui:Destroy()end
-function f.destroy()if h.screenGui then h.screenGui:Destroy()end i=false end
-function f.setState(k,l)if not h.submitButton then return end if k=='validating'
-then h.submitButton.Text='VALIDATING...'h.submitButton.BackgroundColor3=Color3.
-fromRGB(60,60,80)h.submitButton.TextColor3=Color3.fromRGB(255,255,255)h.
-submitButton.Active=false h.submitButton:SetAttribute('BaseColor',h.submitButton
-.BackgroundColor3)h.submitButton:SetAttribute('HoverEnabled',false)elseif k==
-'error'then h.submitButton.Text=l or'ERROR'h.submitButton.BackgroundColor3=
-Color3.fromRGB(160,40,40)h.submitButton.TextColor3=Color3.fromRGB(255,255,255)h.
-submitButton.Active=true h.submitButton:SetAttribute('BaseColor',h.submitButton.
-BackgroundColor3)h.submitButton:SetAttribute('HoverEnabled',false)local m=c:
-Create(h.inputContainer,TweenInfo.new(0.1,Enum.EasingStyle.Quart,Enum.
-EasingDirection.InOut,0,true),{Position=UDim2.new(0,20,0,140)})m:Play()m.
-Completed:Connect(function()c:Create(h.inputContainer,TweenInfo.new(0.1,Enum.
-EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.new(0,25,0,140)}):
-Play()end)elseif k=='reset'then h.submitButton.Text='SUBMIT'h.submitButton.
-BackgroundColor3=Color3.fromRGB(40,100,160)h.submitButton.TextColor3=Color3.
-fromRGB(255,255,255)h.submitButton.Active=true h.submitButton:SetAttribute(
+pcall(g.GET_KEY_CALLBACK)if h and h.getKeyButton then local k=h.getKeyButton
+local l=k.Text if k:GetAttribute'Busy'then return end k:SetAttribute('Busy',true
+)k.Text='LINK COPIED'task.delay(1.2,function()if k and k.Parent then k.Text=l k:
+SetAttribute('Busy',nil)end end)end end function _handleClose()h.screenGui:
+Destroy()end function f.destroy()if h.screenGui then h.screenGui:Destroy()end i=
+false end function f.setState(k,l)if not h.submitButton then return end if k==
+'validating'then h.submitButton.Text='VALIDATING...'h.submitButton.
+BackgroundColor3=Color3.fromRGB(60,60,80)h.submitButton.TextColor3=Color3.
+fromRGB(255,255,255)h.submitButton.Active=false h.submitButton:SetAttribute(
 'BaseColor',h.submitButton.BackgroundColor3)h.submitButton:SetAttribute(
-'HoverEnabled',true)end end function f.setKeyText(k)if h.textInput then h.
-textInput.Text=k end end function f.getKeyText()return h.textInput and h.
-textInput.Text or''end function f.show()if i then return end i=true if h.
-screenGui then h.screenGui.Enabled=true end end function f.hide()if not i then
-return end i=false if h.screenGui then h.screenGui.Enabled=false end end return
-f end end local b,c,d,e=loadstring(game:HttpGet
+'HoverEnabled',false)elseif k=='error'then h.submitButton.Text=l or'ERROR'h.
+submitButton.BackgroundColor3=Color3.fromRGB(160,40,40)h.submitButton.TextColor3
+=Color3.fromRGB(255,255,255)h.submitButton.Active=true h.submitButton:
+SetAttribute('BaseColor',h.submitButton.BackgroundColor3)h.submitButton:
+SetAttribute('HoverEnabled',false)local m=c:Create(h.inputContainer,TweenInfo.
+new(0.1,Enum.EasingStyle.Quart,Enum.EasingDirection.InOut,0,true),{Position=
+UDim2.new(0,20,0,140)})m:Play()m.Completed:Connect(function()c:Create(h.
+inputContainer,TweenInfo.new(0.1,Enum.EasingStyle.Quart,Enum.EasingDirection.Out
+),{Position=UDim2.new(0,25,0,140)}):Play()end)elseif k=='reset'then h.
+submitButton.Text='SUBMIT'h.submitButton.BackgroundColor3=Color3.fromRGB(40,100,
+160)h.submitButton.TextColor3=Color3.fromRGB(255,255,255)h.submitButton.Active=
+true h.submitButton:SetAttribute('BaseColor',h.submitButton.BackgroundColor3)h.
+submitButton:SetAttribute('HoverEnabled',true)end end function f.setKeyText(k)if
+h.textInput then h.textInput.Text=k end end function f.getKeyText()return h.
+textInput and h.textInput.Text or''end function f.show()if i then return end i=
+true if h.screenGui then h.screenGui.Enabled=true end end function f.hide()if
+not i then return end i=false if h.screenGui then h.screenGui.Enabled=false end
+end return f end end local b,c,d,e=loadstring(game:HttpGet
 'https://sdkapi-public.luarmor.net/library.lua')(),a.load'a',function(b)return
 typeof(b)=='function'end,'dodohub'local f,g,h,i,j=e..'/key.txt',
 'dodohub/key.txt',function()if d(isfolder)then local f,g=pcall(isfolder,e)if f
