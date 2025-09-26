@@ -2,7 +2,7 @@
 --!nolint
 
 _P = {
-    genDate = "2025-09-26T08:37:06.977410700+00:00",
+    genDate = "2025-09-26T15:42:03.781237500+00:00",
     cfg = "Release",
     vers = "v0.0.0"
 }
@@ -185,23 +185,27 @@ screenGui then h.screenGui.Enabled=true end end function f.hide()if not i then
 return end i=false if h.screenGui then h.screenGui.Enabled=false end end return
 f end end local b,c,d,e=loadstring(game:HttpGet
 'https://sdkapi-public.luarmor.net/library.lua')(),a.load'a',function(b)return
-typeof(b)=='function'end,'Dodohub'local f,g=e..'/key.txt',function()if d(
-isfolder)and d(makefolder)then local f,g=pcall(isfolder,e)if f and not g then
-pcall(makefolder,e)end end end local h,i=function()if not(d(isfile)and d(
-readfile))then return nil end local h,i=pcall(isfile,f)if not h or not i then
-return nil end local j,k=pcall(readfile,f)if j and typeof(k)=='string'and k~=''
-then return k end return nil end,function(h)if not d(writefile)then return end
-g()pcall(writefile,f,h)end repeat wait(1)until game:IsLoaded()and game:
-GetService'Players'.LocalPlayer local j,k={[105555311806207]=
-'a05bf6f6f0615db868a8d25c1f1c67b2'},h()if k then local l=j[game.PlaceId]if l
-then b.script_id=l local m=b.check_key(k)if m and m.code=='KEY_VALID'then
-getgenv().script_key=k b.load_script()return end end end c.init{ASSET_ID=
+typeof(b)=='function'end,'dodohub'local f,g,h,i,j=e..'/key.txt',
+'dodohub/key.txt',function()if d(isfolder)then local f,g=pcall(isfolder,e)if f
+and g then return end end if d(makefolder)then pcall(makefolder,e)end end,
+function(f)if d(isfile)then local g,h=pcall(isfile,f)if g then return h==true
+end end if d(readfile)then local g,h=pcall(readfile,f)return g==true end return
+false end,function(f)if not d(readfile)then return nil end local g,h=pcall(
+readfile,f)if g and typeof(h)=='string'and h~=''then return h end return nil end
+local k,l=function()if i(f)then local k=j(f)if k then return k end end if i(g)
+then return j(g)end return nil end,function(k)h()if d(writefile)then pcall(
+writefile,f,k)return end if d(delfile)then pcall(delfile,f)end if d(appendfile)
+then pcall(appendfile,f,k)end end repeat wait(1)until game:IsLoaded()and game:
+GetService'Players'.LocalPlayer local m,n={[105555311806207]=
+'a05bf6f6f0615db868a8d25c1f1c67b2'},k()if n then local o=m[game.PlaceId]if o
+then b.script_id=o local p=b.check_key(n)if p and p.code=='KEY_VALID'then
+getgenv().script_key=n b.load_script()return end end end c.init{ASSET_ID=
 '94126317688222',FOOTER_TEXT='DODOHUB | .gg/Esq624R7FB',GET_KEY_CALLBACK=
-function()local l,m,n=nil,pcall(getgenv)if m and typeof(n)=='table'then l=n.
-setclipboard end if typeof(l)=='function'then pcall(l,
+function()local o,p,q=nil,pcall(getgenv)if p and typeof(q)=='table'then o=q.
+setclipboard end if typeof(o)=='function'then pcall(o,
 [[https://ads.luarmor.net/get_key?for=dodohub__ads-oeruTshXacdj]])end end,
-KEY_SUBMIT_CALLBACK=function(l)c.setState'validating'local m=j[game.PlaceId]if
-not m then return end b.script_id=m local n=b.check_key(l)if n.code=='KEY_VALID'
-then c.destroy()getgenv().script_key=l i(l)b.load_script()return end if n.code==
+KEY_SUBMIT_CALLBACK=function(o)c.setState'validating'local p=m[game.PlaceId]if
+not p then return end b.script_id=p local q=b.check_key(o)if q.code=='KEY_VALID'
+then c.destroy()getgenv().script_key=o l(o)b.load_script()return end if q.code==
 'KEY_INVALID'then c.setState('error','Invalid key')return end c.setState('error'
-,n.message or'Unknown error')end}if k then c.setKeyText(k)end
+,q.message or'Unknown error')end}if n then c.setKeyText(n)end
