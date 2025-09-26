@@ -2,7 +2,7 @@
 --!nolint
 
 _P = {
-    genDate = "2025-09-26T08:26:20.443454700+00:00",
+    genDate = "2025-09-26T08:37:06.977410700+00:00",
     cfg = "Release",
     vers = "v0.0.0"
 }
@@ -183,15 +183,25 @@ textInput.Text=k end end function f.getKeyText()return h.textInput and h.
 textInput.Text or''end function f.show()if i then return end i=true if h.
 screenGui then h.screenGui.Enabled=true end end function f.hide()if not i then
 return end i=false if h.screenGui then h.screenGui.Enabled=false end end return
-f end end local b,c=loadstring(game:HttpGet
-'https://sdkapi-public.luarmor.net/library.lua')(),a.load'a'repeat wait(1)until
-game:IsLoaded()and game:GetService'Players'.LocalPlayer local d={[
-105555311806207]='a05bf6f6f0615db868a8d25c1f1c67b2'}c.init{ASSET_ID=
+f end end local b,c,d,e=loadstring(game:HttpGet
+'https://sdkapi-public.luarmor.net/library.lua')(),a.load'a',function(b)return
+typeof(b)=='function'end,'Dodohub'local f,g=e..'/key.txt',function()if d(
+isfolder)and d(makefolder)then local f,g=pcall(isfolder,e)if f and not g then
+pcall(makefolder,e)end end end local h,i=function()if not(d(isfile)and d(
+readfile))then return nil end local h,i=pcall(isfile,f)if not h or not i then
+return nil end local j,k=pcall(readfile,f)if j and typeof(k)=='string'and k~=''
+then return k end return nil end,function(h)if not d(writefile)then return end
+g()pcall(writefile,f,h)end repeat wait(1)until game:IsLoaded()and game:
+GetService'Players'.LocalPlayer local j,k={[105555311806207]=
+'a05bf6f6f0615db868a8d25c1f1c67b2'},h()if k then local l=j[game.PlaceId]if l
+then b.script_id=l local m=b.check_key(k)if m and m.code=='KEY_VALID'then
+getgenv().script_key=k b.load_script()return end end end c.init{ASSET_ID=
 '94126317688222',FOOTER_TEXT='DODOHUB | .gg/Esq624R7FB',GET_KEY_CALLBACK=
-function()setclipboard
-[[https://ads.luarmor.net/get_key?for=dodohub__ads-oeruTshXacdj]]end,
-KEY_SUBMIT_CALLBACK=function(e)c.setState'validating'local f=d[game.PlaceId]if
-not f then return end b.script_id=f local g=b.check_key(e)if g.code=='KEY_VALID'
-then c.destroy()getgenv().script_key=e b.load_script()return end if g.code==
+function()local l,m,n=nil,pcall(getgenv)if m and typeof(n)=='table'then l=n.
+setclipboard end if typeof(l)=='function'then pcall(l,
+[[https://ads.luarmor.net/get_key?for=dodohub__ads-oeruTshXacdj]])end end,
+KEY_SUBMIT_CALLBACK=function(l)c.setState'validating'local m=j[game.PlaceId]if
+not m then return end b.script_id=m local n=b.check_key(l)if n.code=='KEY_VALID'
+then c.destroy()getgenv().script_key=l i(l)b.load_script()return end if n.code==
 'KEY_INVALID'then c.setState('error','Invalid key')return end c.setState('error'
-,g.message or'Unknown error')end}
+,n.message or'Unknown error')end}if k then c.setKeyText(k)end
